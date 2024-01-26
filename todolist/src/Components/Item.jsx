@@ -1,9 +1,25 @@
 import React from 'react'
 
-const Item = () => {
+const Item = ({data,removeitem}) => {
+   
   return (
     <div>
-      List 
+        <ul>
+      {
+        data.map((el,index)=>{
+            return(
+                <li key={index}>
+                {el}
+                <button onClick={()=>removeitem(index)}>
+                    Remove
+                </button>
+                </li>
+            )
+
+        })
+      }
+        </ul>
+
     </div>
   )
 }
